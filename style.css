@@ -1,0 +1,263 @@
+body{
+margin:0;
+font-family:Arial;
+background:black;
+color:white;
+scroll-behavior:smooth;
+}
+
+.glass{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+border-radius:15px;
+padding:20px;
+border:1px solid rgba(255,255,255,0.2);
+}
+
+.navbar{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:15px 40px;
+z-index:1000;
+}
+/* NAV LINKS - MIRROR GLASS BUTTONS */
+.navbar ul li a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+
+    /* Glass effect */
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    transition: all 0.4s ease;
+}
+
+/* Shine reflection effect */
+.navbar ul li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0.2),
+        rgba(255,255,255,0.6),
+        rgba(255,255,255,0.2)
+    );
+    transform: skewX(-25deg);
+    transition: 0.6s;
+}
+
+/* Hover animation */
+.navbar ul li a:hover::before {
+    left: 130%;
+}
+
+.navbar ul li a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 200, 150, 0.3);
+    border: 1px solid #00c896;
+}
+
+
+.navbar ul{
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+/* HERO IMAGE - initially square */
+.hero-image {
+    width: 200px;
+    height: 250px;
+    border-radius: 10px; /* square corners */
+    transition: all 0.8s ease-in-out;
+    object-fit: cover;
+}
+
+/* CORNER FRAME IMAGE - moves to navbar */
+.corner-frame {
+    position: fixed;
+    top:80px;
+    left: 60px;
+    width: 140px;
+    height: 160px;
+    border-radius: 0px; /* initially square in corner */
+    overflow: hidden;
+    transition: transform 0.8s ease-in-out, border 0.8s ease-in-out, border-radius 0.8s ease-in-out;
+    opacity: 0; /* start hidden */
+    z-index: 999;
+}
+
+.corner-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px; /* match the container */
+    transition: inherit;
+    object-fit: cover;
+}
+
+/* About Section Animations */
+.about-typing, .about-rest {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+.about-typing span {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #00c896;
+  width: 0;
+  opacity: 1;
+  animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+}
+
+/* Delay for each line */
+.about-typing span:nth-child(1) { animation-delay: 0s; }
+.about-typing span:nth-child(2) { animation-delay: 3s; }
+.about-typing span:nth-child(3) { animation-delay: 6s; }
+.about-typing span:nth-child(4) { animation-delay: 9s; }
+.about-typing span:nth-child(5) { animation-delay: 12s; }
+.about-typing span:nth-child(6) { animation-delay: 15s; }
+.about-typing span:nth-child(7) { animation-delay: 18s; }
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+
+.section{
+padding:120px 40px;
+}
+/* SKILLS */
+.skill{
+margin-bottom:15px;
+}
+.progress{
+background:rgba(255,255,255,0.2);
+height:10px;
+border-radius:10px;
+}
+.bar{
+height:10px;
+width:0;
+border-radius:10px;
+background:#00c896;
+transition:1.5s;
+}
+
+.portfolio-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+/* FLIP CARD */
+.flip-card{
+perspective:1000px;
+}
+
+.flip-inner{
+position:relative;
+width:100%;
+height:300px;
+transition:transform 0.8s;
+transform-style:preserve-3d;
+}
+
+.flip-card:hover .flip-inner{
+transform:rotateY(180deg);
+}
+
+.flip-front, .flip-back{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+}
+
+.flip-back{
+transform:rotateY(180deg);
+}
+
+video{
+width:100%;
+border-radius:10px;
+}
+
+.system-card img{
+width:100%;
+border-radius:10px;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:10px;
+max-width:400px;
+}
+
+input,textarea,select{
+padding:10px;
+border:none;
+border-radius:8px;
+}
+
+button{
+padding:10px;
+background:#00c896;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+/* FLOATING WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:22px;
+z-index:1000;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+margin-top:40px;
+}
+
+.social-icons a{
+margin:0 10px;
+font-size:20px;
+color:white;
+}
