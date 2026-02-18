@@ -77,6 +77,34 @@ display:flex;
 gap:20px;
 list-style:none;
 }
+/* ===== MOBILE NAV FIX ===== */
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .navbar ul {
+        gap: 10px;
+    }
+
+    .navbar ul li a {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    /* Prevent overflow */
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
 
 .hero{
 height:100vh;
@@ -98,7 +126,7 @@ text-align:center;
 /* CORNER FRAME IMAGE - moves to navbar */
 .corner-frame {
     position: fixed;
-    top:80px;
+    top:70px;
     left: 60px;
     width: 140px;
     height: 160px;
