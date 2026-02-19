@@ -60,50 +60,7 @@ z-index:1000;
     transition: 0.6s;
 }
 
-/* Hover animation */
-.navbar ul li a:hover::before {
-    left: 130%;
-}
 
-.navbar ul li a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 200, 150, 0.3);
-    border: 1px solid #00c896;
-}
-
-
-.navbar ul{
-display:flex;
-gap:20px;
-list-style:none;
-}
-/* ===== MOBILE NAV FIX ===== */
-@media (max-width: 768px) {
-
-    .navbar {
-        padding: 15px 20px;
-    }
-
-    .navbar ul {
-        gap: 10px;
-    }
-
-    .navbar ul li a {
-        padding: 6px 12px;
-        font-size: 14px;
-    }
-
-    /* Prevent overflow */
-    .navbar {
-        flex-wrap: wrap;
-    }
-
-    .navbar ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 10px;
-    }
-}
 
 
 .hero{
@@ -126,8 +83,8 @@ text-align:center;
 /* CORNER FRAME IMAGE - moves to navbar */
 .corner-frame {
     position: fixed;
-    top:70px;
-    left: 60px;
+    top:40px;
+    right: -20px;
     width: 140px;
     height: 160px;
     border-radius: 0px; /* initially square in corner */
@@ -268,7 +225,7 @@ cursor:pointer;
 /* FLOATING WHATSAPP */
 .whatsapp{
 position:fixed;
-bottom:20px;
+bottom:60px;
 right:20px;
 background:#25D366;
 color:white;
@@ -288,4 +245,43 @@ margin-top:40px;
 margin:0 10px;
 font-size:20px;
 color:white;
+}
+/* Bottom nav - hidden on desktop */
+.bottom-nav {
+    display: none;
+}
+
+/* MOBILE DESIGN */
+@media (max-width: 768px) {
+    /* Keep top navbar clean */
+    .navbar ul { display: none; }
+
+    /* Bottom nav visible */
+    .bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        justify-content: space-around;
+        padding: 10px 0;
+        background: rgba(30,60,114,0.9); /* dark glass feel */
+        backdrop-filter: blur(15px);
+        z-index: 1000;
+    }
+
+    .bottom-nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px 15px;
+        border-radius: 12px;
+        transition: 0.3s;
+        background: rgba(255,255,255,0.1);
+    }
+
+    .bottom-nav a:hover {
+        background: #00c896;
+        color: #1e3c72;
+    }
 }

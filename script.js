@@ -85,4 +85,11 @@ window.addEventListener("scroll", animateAbout);
 animateAbout(); // trigger on load if section already visible
 
 
+// MOBILE MENU
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
 
