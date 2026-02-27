@@ -29,29 +29,44 @@ window.addEventListener("scroll", () => {
 
 
 // SKILL BAR ANIMATION
-const bars=document.querySelectorAll(".bar");
-function animateSkills(){
-bars.forEach(bar=>{
-let percent=bar.getAttribute("data-percent");
-bar.style.width=percent+"%";
-});
+const skillItems = document.querySelectorAll(".skill-item");
+let skillsAnimated = false;
+
+function animateSkills() {
+  skillItems.forEach(item => {
+    const percent = parseInt(item.dataset.percent);
+    const fill = item.querySelector(".skill-fill");
+    const percentText = item.querySelector(".percent");
+
+    fill.style.width = percent + "%";
+
+    let count = 0;
+    const interval = setInterval(() => {
+      if (count >= percent) {
+        clearInterval(interval);
+      } else {
+        count++;
+        percentText.textContent = count + "%";
+      }
+    }, 15);
+  });
 }
-window.addEventListener("scroll",()=>{
-let skills=document.getElementById("skills");
-let position=skills.getBoundingClientRect().top;
-let screen=window.innerHeight;
-if(position<screen-100){animateSkills();}
+
+window.addEventListener("scroll", () => {
+  const skillsSection = document.getElementById("skills");
+  const position = skillsSection.getBoundingClientRect().top;
+  const screenHeight = window.innerHeight;
+
+  if (!skillsAnimated && position < screenHeight - 100) {
+    animateSkills();
+    skillsAnimated = true;
+  }
 });
 // DARK / LIGHT MODE TOGGLE
 const themeToggle = document.getElementById("themeToggle");
-themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    const icon = themeToggle.querySelector("i");
-    if (document.body.classList.contains("dark")) {
-        icon.classList.replace("fa-moon", "fa-sun");
-    } else {
-        icon.classList.replace("fa-sun", "fa-moon");
-    }
+
+themeToggle.addEventListener("change", () => {
+    document.body.classList.toggle("light");
 });
 
 // WHATSAPP FORM SUBMISSION
@@ -92,4 +107,3 @@ const navLinks = document.querySelector(".nav-links");
 menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
-

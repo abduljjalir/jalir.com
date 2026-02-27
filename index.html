@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luzinda Abduljalir | Elite Portfolio</title>
+<meta name="description" content="Official portfolio of Abduljalir Luzinda - Web Developer, Designer and Software Developer. View my projects and contact me.">
+
+<meta name="keywords" content="Abduljalir Luzinda, Web Developer, Portfolio, Software Developer, Algeria">
+
+<meta name="author" content="Abduljalir Luzinda">
 
 <link rel="stylesheet" href="style.css">
 
@@ -23,7 +28,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     <div class="corner-frame" id="cornerFrame">
         <img src="p1.jpeg" alt="Profile">
     </div>
-    <button id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+   <div class="theme-switch">
+      <input type="checkbox" id="themeToggle">
+      <label for="themeToggle" class="slider">
+        <span class="icon sun"><i class="fa-solid fa-sun"></i></span>
+        <span class="icon moon"><i class="fa-solid fa-moon"></i></span>
+      </label>
+   </div>
 </nav>
 
 <!-- WHATSAPP FLOAT -->
@@ -45,74 +56,153 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <section id="about" class="section glass about-section">
     <h2>About Me</h2>
     <p id="aboutTyping" class="about-typing">
-        <span>I am a storyteller of code and an architect of digital experiences.</span>
-        <span>From building intuitive websites to crafting robust systems, I weave logic </span>
-       <span> and creativity into seamless solutions. Currently pursuing my journey at </span>
-        <span>the <strong>University of Djelfa</strong>, I specialize in software development</span> 
-        <span>and mobile applications. Along the way, I have shared knowledge as an English teacher, </span>
-        <span>blending education with innovation. Every project I touch is a bridge between ideas </span>
-        <span> and reality, where technology meets purpose.<span>
+        <span>I am a storyteller of code and an architect of digital </span>
+        <span>experiences.From building intuitive websites to crafting </span>
+       <span>robust systems, I weave logicand creativity into  </span>
+       <span>seamless solutions. Currently pursuing my journey at the </span>
+        <span><strong>University of Djelfa</strong>, I specialize in software development</span> 
+        <span>and mobile applications. Along the way, I have shared</span>
+        <span>knowledge as an English teacher, blending education </span>
+        <span>with innovation. Every project I touch is a bridge between</span>
+        <span> ideas and reality, where technology meets purpose.<span>
     </p>
 </section>
-
-
 <!-- RESUME -->
 <section id="resume" class="section glass">
     <h2>Education</h2>
     <p>
-        Bachelor in Software Engneering (Ongoing) <br>
-       <strong> University of Djelfa – Algeria </strong><br>
+        Bachelor in Software Engineering (Ongoing) <br>
+        <strong>University of Djelfa – Algeria</strong><br>
         Specialization: Software Development & Mobile Applications
     </p>
 
     <h2>Experience</h2>
     <p>
         English Teacher – University of Djelfa <br>
-        Developer – POS & Student Management Systems
+        Developer – POS & Student Management Systems <br>
         Several freelance web development projects, including e-commerce and corporate websites.
     </p>
-</section>
-<!-- SKILLS -->
-<section id="skills" class="section glass">
-    <h2>Skills</h2>
 
-    <div class="skill">
-        <p>HTML</p>
-        <div class="progress"><div class="bar" data-percent="95"></div></div>
+    <div class="cv-buttons">
+        <a href="resume.pdf" download class="cv-btn">⬇ Download CV</a>
+        <button id="readCV" class="cv-btn">👁 Read CV</button>
     </div>
 
-    <div class="skill">
-        <p>CSS</p>
-        <div class="progress"><div class="bar" data-percent="90"></div></div>
+    <!-- Modal for reading CV -->
+    <div class="cv-modal" id="cvModal">
+        <div class="cv-content">
+            <span class="close-btn" id="closeCV">&times;</span>
+            <iframe src="resume.pdf"></iframe>
+        </div>
     </div>
-
-    <div class="skill">
-        <p>JavaScript</p>
-        <div class="progress"><div class="bar" data-percent="85"></div></div>
-    </div>
-
-    <div class="skill">
-        <p>C#</p>
-        <div class="progress"><div class="bar" data-percent="80"></div></div>
-    </div>
-
-   
-    <div class="skill">
-        <p>SQL & Databases</p>
-        <div class="progress"><div class="bar" data-percent="80"></div></div>
-    </div>
-    <div class="skill">
-        <p>Android Development</p>
-        <div class="progress"><div class="bar" data-percent="75"></div></div>
-    </div>
-    <div class="skill">
-        <p>Encryption & Security</p>
-        <div class="progress"><div class="bar" data-percent="70"></div></div>
-    </div>
-
 </section>
 
+<!--SKILLS-->
+<section id="skills" class="section">
+  <h2 class="section-title">Technical Expertise</h2>
 
+  <div class="skills-container">
+
+    <!-- Programming -->
+    <div class="skill-category">
+      <h3>Programming</h3>
+
+      <div class="skill-item" data-percent="95">
+        <div class="skill-header">
+          <span>HTML</span>
+          <span class="percent">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill"></div></div>
+      </div>
+
+      <div class="skill-item" data-percent="90">
+        <div class="skill-header">
+          <span>CSS</span>
+          <span class="percent">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill"></div></div>
+      </div>
+
+      <div class="skill-item" data-percent="85">
+        <div class="skill-header">
+          <span>JavaScript</span>
+          <span class="percent">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill"></div></div>
+      </div>
+
+      <div class="skill-item" data-percent="80">
+        <div class="skill-header">
+          <span>C#</span>
+          <span class="percent">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill"></div></div>
+      </div>
+
+      <div class="skill-item" data-percent="75">
+        <div class="skill-header">
+          <span>Kotlin</span>
+          <span class="percent">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill"></div></div>
+      </div>
+
+      <div class="skill-item" data-percent="75">
+        <div class="skill-header">
+          <span>Java</span>
+          <span class="percent">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill"></div></div>
+      </div>
+    </div>
+
+    <!-- Databases & Architecture -->
+    <div class="skill-category">
+      <h3>Databases & Engineering</h3>
+
+      <div class="skill-item" data-percent="85">
+        <div class="skill-header">
+          <span>MySQL</span>
+          <span class="percent">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill"></div></div>
+      </div>
+
+      <div class="skill-item" data-percent="80">
+        <div class="skill-header">
+          <span>MongoDB</span>
+          <span class="percent">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill"></div></div>
+      </div>
+
+      <div class="skill-item" data-percent="85">
+        <div class="skill-header">
+          <span>Requirement Engineering</span>
+          <span class="percent">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill"></div></div>
+      </div>
+
+      <div class="skill-item" data-percent="80">
+        <div class="skill-header">
+          <span>Software Architecture</span>
+          <span class="percent">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill"></div></div>
+      </div>
+
+      <div class="skill-item" data-percent="75">
+        <div class="skill-header">
+          <span>Encryption & Security</span>
+          <span class="percent">0%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill"></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
 <!-- PORTFOLIO -->
 <section id="portfolio" class="section">
     <h2>Projects</h2>
@@ -237,7 +327,27 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     </div>
     <p>© <span id="year"></span> Abduljalir</p>
 </footer>
+<script>
+    // CV Modal Open & Close
+    const readCVBtn = document.getElementById("readCV");
+    const cvModal = document.getElementById("cvModal");
+    const closeCV = document.getElementById("closeCV");
 
+    readCVBtn.addEventListener("click", () => {
+        cvModal.style.display = "flex";
+    });
+
+    closeCV.addEventListener("click", () => {
+        cvModal.style.display = "none";
+    });
+
+    // Close modal when clicking outside the content
+    cvModal.addEventListener("click", (e) => {
+        if (e.target === cvModal) {
+            cvModal.style.display = "none";
+        }
+    });
+</script>
 <script src="script.js"></script>
 </body>
 </html>
