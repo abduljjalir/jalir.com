@@ -65,10 +65,22 @@ window.addEventListener("scroll", () => {
 // DARK / LIGHT MODE TOGGLE
 const themeToggle = document.getElementById("themeToggle");
 
-themeToggle.addEventListener("change", () => {
-    document.body.classList.toggle("light");
-});
+// LOAD SAVED THEME
+if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light");
+    themeToggle.checked = true;
+}
 
+// TOGGLE THEME + SAVE
+themeToggle.addEventListener("change", () => {
+    if (themeToggle.checked) {
+        document.body.classList.add("light");
+        localStorage.setItem("theme", "light");
+    } else {
+        document.body.classList.remove("light");
+        localStorage.setItem("theme", "dark");
+    }
+});
 // WHATSAPP FORM SUBMISSION
 const contactForm = document.getElementById("contactForm");
 contactForm.addEventListener("submit", e => {
