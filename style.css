@@ -9,22 +9,22 @@ html, body{
   overflow-x:hidden;
 }
 body.light{
-background:blue;
+background:grey;
 color:black;
 }
 body.light.glass{
-  background:rgba(255,255,255,0.7);
-  color:#1111;
+  background:darkblue;
+  color:black;
   backdrop-filter: blur(10px);
 }
 body.light .navbar{
-  background:rgba(255,255,255,0.8);
+  background:darkred;
   backdrop-filter: blur(12px);
 }
 body.light .navbar ul li a{
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #1111;
+  color: black;
 }
 .glass{
 background:rgba(255,255,255,0.1);
@@ -435,8 +435,8 @@ color:white;
 /* APPLE STYLE THEME TOGGLE */
 .theme-switch {
   position: relative;
-  width: 60px;
-  height: 32px;
+  width: 50px;
+  height: 30px;
   margin-top: 30px;
   margin-right: 45px;
 }
@@ -501,7 +501,7 @@ color:white;
   }
 
   .navbar{
-    padding:12px 15px;
+    padding:10px 12px;
   }
 
   .navbar ul{
@@ -509,7 +509,7 @@ color:white;
   }
 
   .navbar ul li a{
-    padding:6px 12px;
+    padding:6px 10px;
     font-size:13px;
   }
 
