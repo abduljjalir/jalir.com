@@ -272,12 +272,14 @@ gap:20px;
 
 .flip-card{
 perspective:1000px;
-gap: 20px;
+width: 280px;;
+gap: 40px;
+margin: 10px;
 }
 
 .flip-inner{
 position:relative;
-width:100%;
+width: 280px;
 height:300px;
 transition:transform 0.8s;
 transform-style:preserve-3d;
@@ -293,7 +295,7 @@ gap: 20px;
 
 .flip-front, .flip-back{
 position:absolute;
-width:100%;
+width: 280px;
 height:100%;
 backface-visibility:hidden;
 }
@@ -510,11 +512,14 @@ color:white;
   }
 
   .navbar{
-    padding:10px 12px;
+    padding:8px 8px;
+    border-radius:0;
+    width:calc(100% - 10px);
   }
+  
 
   .navbar ul{
-    gap:10px;
+    gap:8px;
   }
 
   .navbar ul li a{
@@ -607,12 +612,18 @@ color:white;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 400px) {
     .section {
         padding: 60px 12px;
     }
     .section h2 {
         font-size: 1.6rem;
         margin-bottom: 25px;
+    }
+    .theme-switch {
+      height: 25px;
+      width: 45px;
+        margin-top: 45px;
+        margin-right: 30px;
     }
 }
